@@ -1,14 +1,14 @@
 class IntLiteral:
     def __init__(self, value):
-        self.value = value  # int
+        self.exp = value  # int
 
     def __repr__(self):
-        return f'IntLiteral({self.value})'
+        return f'IntLiteral({self.exp})'
 
 
 class BoolLiteral:
     def __init__(self, value):
-        self.value = value  # bool
+        self.exp = value  # bool
 
     def __repr__(self):
         return f'BoolLiteral({self.value})'
@@ -16,7 +16,7 @@ class BoolLiteral:
 
 class Variable:
     def __init__(self, name):
-        self.name = name  # str
+        self.title = name  # str
 
     def __repr__(self):
         return f'Variable({self.name!r})'
@@ -25,11 +25,11 @@ class Variable:
 class BinaryOp:
     def __init__(self, op, left, right):
         self.op = op        # str, e.g. '+', '&&'
-        self.left = left
-        self.right = right
+        self.leftward = left
+        self.rightward = right
 
     def __repr__(self):
-        return f'BinaryOp({self.op!r}, {self.left!r}, {self.right!r})'
+        return f'BinaryOp({self.op!r}, {self.leftward!r}, {self.rightward!r})'
 
 
 class UnaryOp:

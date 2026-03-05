@@ -1,6 +1,5 @@
 class Token:
-    """Represents a single token produced by the lexer."""
-
+    
     def __init__(self, type_, value, line, column):
         self.type = type_
         self.value = value

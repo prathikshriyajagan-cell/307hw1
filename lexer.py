@@ -7,11 +7,10 @@ class LexerError(Exception):
 
 
 class Lexer:
-    """Converts MiniML source code into a list of tokens."""
 
     def __init__(self, source):
         self.source = source
-        self.pos = 0
+        self.position = 0
         self.line = 1
         self.column = 1
         self.tokens = []
@@ -20,19 +19,19 @@ class Lexer:
         raise LexerError(f'Lexical Error at line {self.line}, col {self.column}: {msg}')
 
     def current(self):
-        if self.pos < len(self.source):
+        if self.position < len(self.source):
             return self.source[self.pos]
         return None
 
     def peek(self, offset=1):
-        idx = self.pos + offset
+        idx = self.position + offset
         if idx < len(self.source):
             return self.source[idx]
         return None
 
     def advance(self):
-        ch = self.source[self.pos]
-        self.pos += 1
+        ch = self.source[self.position]
+        self.position += 1
         if ch == '\n':
             self.line += 1
             self.column = 1
