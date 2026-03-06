@@ -8,7 +8,7 @@ class IntLiteral:
 
 class BoolLiteral:
     def __init__(self, value):
-        self.exp = value  # bool
+        self.exp = value 
 
     def __repr__(self):
         return f'BoolLiteral({self.value})'
@@ -16,7 +16,7 @@ class BoolLiteral:
 
 class Variable:
     def __init__(self, name):
-        self.title = name  # str
+        self.title = name 
 
     def __repr__(self):
         return f'Variable({self.name!r})'
@@ -24,7 +24,7 @@ class Variable:
 
 class BinaryOp:
     def __init__(self, op, left, right):
-        self.op = op        # str, e.g. '+', '&&'
+        self.op = op
         self.leftward = left
         self.rightward = right
 
@@ -34,7 +34,7 @@ class BinaryOp:
 
 class UnaryOp:
     def __init__(self, op, operand):
-        self.op = op        # 'not' or '-'
+        self.op = op  
         self.operand = operand
 
     def __repr__(self):
@@ -42,18 +42,13 @@ class UnaryOp:
 
 
 class Let:
-    """
-    Represents both simple let bindings and function shorthand.
-
-    let [rec] name params... = bound_expr in body_expr
-    """
 
     def __init__(self, name, params, bound_expr, body_expr, is_rec=False):
-        self.name = name            # str
-        self.params = params        # list[str], empty for simple bindings
+        self.name = name       
+        self.params = params        
         self.bound_expr = bound_expr
         self.body_expr = body_expr
-        self.is_rec = is_rec        # bool
+        self.is_rec = is_rec  
 
     def __repr__(self):
         rec = 'rec ' if self.is_rec else ''
@@ -75,10 +70,8 @@ class If:
 
 
 class Fun:
-    """Anonymous function: fun param1 param2 ... -> body"""
-
     def __init__(self, params, body):
-        self.params = params    # list[str], at least one
+        self.params = params 
         self.body = body
 
     def __repr__(self):
@@ -86,8 +79,6 @@ class Fun:
 
 
 class App:
-    """Function application: func arg"""
-
     def __init__(self, func, arg):
         self.func = func
         self.arg = arg

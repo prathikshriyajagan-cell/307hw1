@@ -9,13 +9,10 @@ class Token:
     def __repr__(self):
         return f'Token({self.type}, {self.value!r}, line={self.line}, col={self.column})'
 
-
-# Token type constants
 INT      = 'INT'
 BOOL     = 'BOOL'
 ID       = 'ID'
 
-# Keywords
 LET      = 'LET'
 REC      = 'REC'
 IN       = 'IN'
@@ -25,13 +22,11 @@ ELSE     = 'ELSE'
 FUN      = 'FUN'
 NOT      = 'NOT'
 
-# Arithmetic operators
 PLUS     = 'PLUS'
 MINUS    = 'MINUS'
 STAR     = 'STAR'
 SLASH    = 'SLASH'
 
-# Comparison operators
 EQ       = 'EQ'
 NEQ      = 'NEQ'
 LT       = 'LT'
@@ -39,11 +34,9 @@ GT       = 'GT'
 LEQ      = 'LEQ'
 GEQ      = 'GEQ'
 
-# Boolean operators
 AND      = 'AND'
 OR       = 'OR'
 
-# Other operators / delimiters
 ARROW    = 'ARROW'
 LPAREN   = 'LPAREN'
 RPAREN   = 'RPAREN'
