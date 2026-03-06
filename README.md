@@ -1,9 +1,5 @@
 # MiniML Lexer and Parser
 
-## Requirements
-
-Python 3.10+
-
 ## How to Run
 
 ```bash
