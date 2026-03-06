@@ -34,8 +34,8 @@ class Parser:
 
     def expect(self, tok_type):
         token = self.current()
-        if token == tok_type:
-            self.advance()
+        if token.type == tok_type:
+            return self.advance()
         else:
             if token.type != T.EOF:
                 raise ParseError(f'Syntax Error at line {token.line}, col {token.column}: expected {tok_type}, got {token.type} ({token.value!r})')

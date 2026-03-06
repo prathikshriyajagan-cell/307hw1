@@ -11,7 +11,7 @@ class BoolLiteral:
         self.exp = value 
 
     def __repr__(self):
-        return f'BoolLiteral({self.value})'
+        return f'BoolLiteral({self.exp})'
 
 
 class Variable:
@@ -19,7 +19,7 @@ class Variable:
         self.title = name 
 
     def __repr__(self):
-        return f'Variable({self.name!r})'
+        return f'Variable({self.title!r})'
 
 
 class BinaryOp:

@@ -36,7 +36,7 @@ class Lexer:
             self.column = self.column + 1
         else:
             self.line = self.line + 1
-            self.column = self.column + 1
+            self.column = 1
         return ch
 
     def skip_whitespace(self):
@@ -48,15 +48,13 @@ class Lexer:
         startCol = self.column
         self.advance()
         self.advance()
-        if self.current is None:
-            raise LexerError(f'Lexical Error at line {startLine}, col {startCol}: unterminated comment')
         while self.current() is not None:
-            if self.current != '*' or self.peek() == ')':
-                self.advance()
-            else:
+            if self.current() == '*' and self.peek() == ')':
                 self.advance()
                 self.advance()
                 return
+            self.advance()
+        raise LexerError(f'Lexical Error at line {startLine}, col {startCol}: unterminated comment')
 
     def read_int(self):
         startCol = self.column
